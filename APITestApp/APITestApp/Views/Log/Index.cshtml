@@ -1,0 +1,112 @@
+﻿@model IEnumerable<object>
+
+@{
+    ViewData["Title"] = "API Logs Dashboard";
+    var logs = Model.Cast<Dictionary<string, object>>().ToList();
+
+    var successLogs = logs.Where(l => (l.ContainsKey("status") && l["status"] != null && l["status"].ToString().StartsWith("2")) && string.IsNullOrEmpty(l.ContainsKey("error") ? l["error"]?.ToString() : null)).ToList();
+    var errorLogs = logs.Where(l => l.ContainsKey("error") && !string.IsNullOrEmpty(l["error"]?.ToString())).ToList();
+    var warningLogs = logs.Where(l => l.ContainsKey("status") && l["status"] != null && (l["status"].ToString().StartsWith("4") || l["status"].ToString().StartsWith("5")) && (l["error"] == null || string.IsNullOrEmpty(l["error"].ToString()))).ToList();
+}
+
+@section Styles {
+        <link rel="stylesheet" href="~/css/logStyle.css" />
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<div class="floating-shape shape1"></div>
+<div class="floating-shape shape2"></div>
+<div class="floating-shape shape3"></div>
+
+<div class="container mt-4" style="position: relative; z-index: 1;">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Log/Index">Logs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Home/Guide">Guide</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1 class="text-center mb-4">API Logs Dashboard</h1>
+
+    <div class="download-btn-container">
+        <a href="/Log/DownloadPdf" class="btn btn-success btn-lg btn-custom">📄 Download Report</a>
+    </div>
+
+    @* Success Logs *@
+    <h2 class="section-title">✅ Successful APIs (@successLogs.Count)</h2>
+    <div class="dashboard-grid">
+        @foreach (var log in successLogs)
+        {
+            var apiName = log.GetValueOrDefault("api_name")?.ToString() ?? "Unknown API";
+            var timestamp = log.GetValueOrDefault("timestamp")?.ToString();
+            var responseTime = log.GetValueOrDefault("response_time")?.ToString();
+            var status = log.GetValueOrDefault("status")?.ToString();
+            <div class="tile tile-success">
+                <h4>@apiName</h4>
+                <p>@(timestamp ?? "-")</p>
+                <span class="badge bg-success text-dark">Status: @(status ?? "-")</span>
+                @if (!string.IsNullOrEmpty(responseTime))
+                {
+                    <span class="badge bg-primary">⚡ @responseTime ms</span>
+                }
+            </div>
+        }
+    </div>
+
+    @* Error Logs *@
+    <h2 class="section-title mt-5">💥 Error APIs (@errorLogs.Count)</h2>
+    <div class="dashboard-grid">
+        @foreach (var log in errorLogs)
+        {
+            var apiName = log.GetValueOrDefault("api_name")?.ToString() ?? "Unknown API";
+            var error = log.GetValueOrDefault("error")?.ToString();
+            var timestamp = log.GetValueOrDefault("timestamp")?.ToString();
+            <div class="tile tile-error">
+                <h4>@apiName</h4>
+                <p>@(timestamp ?? "-")</p>
+                <p class="text-danger">@error</p>
+            </div>
+        }
+    </div>
+
+    @* Warning Logs *@
+    <h2 class="section-title mt-5">⚠️ Server / Client Errors (@warningLogs.Count)</h2>
+    <div class="dashboard-grid">
+        @foreach (var log in warningLogs)
+        {
+            var apiName = log.GetValueOrDefault("api_name")?.ToString() ?? "Unknown API";
+            var status = log.GetValueOrDefault("status")?.ToString();
+            var timestamp = log.GetValueOrDefault("timestamp")?.ToString();
+            var responseTime = log.GetValueOrDefault("response_time")?.ToString();
+            <div class="tile tile-warning">
+                <h4>@apiName</h4>
+                <p>@(timestamp ?? "-")</p>
+                <span class="badge bg-warning text-dark">Status: @(status ?? "-")</span>
+                @if (!string.IsNullOrEmpty(responseTime))
+                {
+                    <span class="badge bg-primary">⚡ @responseTime ms</span>
+                }
+            </div>
+        }
+    </div>
+</div>

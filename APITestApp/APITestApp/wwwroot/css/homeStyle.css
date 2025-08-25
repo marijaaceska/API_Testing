@@ -1,0 +1,201 @@
+﻿body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    font-family: 'Segoe UI', sans-serif;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    animation: float 20s linear infinite;
+    z-index: 0;
+}
+
+.shape1 {
+    width: 200px;
+    height: 200px;
+    background: #00c6ff;
+    top: -50px;
+    left: -50px;
+    animation-delay: 0s;
+}
+
+.shape2 {
+    width: 150px;
+    height: 150px;
+    background: #0072ff;
+    top: 200px;
+    right: -75px;
+    animation-delay: 5s;
+}
+
+.shape3 {
+    width: 100px;
+    height: 100px;
+    background: #00c6ff;
+    bottom: -50px;
+    left: 50%;
+    animation-delay: 10s;
+}
+
+@@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-30px) rotate(180deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(360deg);
+    }
+}
+
+.welcome-container {
+    margin-top: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.4);
+    animation: fadeInDown 1s ease-out;
+}
+
+.welcome-lead {
+    font-size: 1.6rem;
+    margin-top: 20px;
+    color: #e0e0e0;
+    animation: fadeInUp 1s ease-out;
+}
+
+.btn-custom {
+    font-size: 1.25rem;
+    padding: 15px 35px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+    .btn-custom:hover {
+        transform: translateY(-5px) scale(1.05);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+        background: linear-gradient(45deg, #00c6ff, #0072ff);
+        color: #fff;
+    }
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 35px 25px;
+    width: 270px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+    .feature-card:hover {
+        transform: translateY(-12px) scale(1.05);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        background: rgba(255,255,255,0.1);
+    }
+
+    .feature-card i {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        color: #00c6ff;
+    }
+
+    .feature-card h5 {
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .feature-card p {
+        font-size: 0.95rem;
+        color: #ddd;
+    }
+
+@@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert {
+    max-width: 500px;
+    margin: 20px auto 0;
+}
+
+.navbar-custom {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 0.5rem 2rem;
+    margin-bottom: 30px;
+}
+
+    .navbar-custom .nav-link {
+        color: #fff;
+        font-weight: 500;
+        font-size: 1rem;
+        transition: color 0.2s, transform 0.2s;
+    }
+
+        .navbar-custom .nav-link:hover {
+            color: #00c6ff;
+            transform: scale(1.05);
+        }
+
+        .navbar-custom .nav-link.active {
+            color: #00c6ff;
+            font-weight: 700;
+            position: relative;
+        }
+
+            .navbar-custom .nav-link.active::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 10%;
+                width: 80%;
+                height: 3px;
+                background: #00c6ff;
+                border-radius: 3px;
+            }

@@ -1,0 +1,11 @@
+{
+  "mappings": {
+    "properties": {
+      "timestamp": { "type": "date", "format": "yyyy-MM-dd HH:mm:ss" },
+      "api_name": { "type": "keyword" },
+      "status": { "type": "integer" },
+      "response_time": { "type": "float" },
+      "error": { "type": "text" }
+    }
+  }
+}

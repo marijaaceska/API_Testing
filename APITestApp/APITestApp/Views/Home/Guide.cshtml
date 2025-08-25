@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "API Error Guide";
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/homeStyle.css" />
+    <link rel="stylesheet" href="~/css/guideStyle.css" />
+}
+
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" &&
+                                        ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active" : "")"
+                       href="/Home/Index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Log" ? "active" : "")"
+                       href="/Log/Index">Logs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/Home/Guide">Guide</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="floating-shape shape1"></div>
+<div class="floating-shape shape2"></div>
+<div class="floating-shape shape3"></div>
+
+<div class="guide-container">
+    <h1 class="guide-title">🌟 API Error Guide</h1>
+    <p>Learn to quickly identify, understand, and fix common API responses and errors.</p>
+
+    <div>
+        <div class="error-bubble status-200">
+            <i class="bi bi-check-circle-fill"></i>
+            <h5>200 OK</h5>
+            <p>Request successful. The server returned the expected data.</p>
+            <p><strong>Tip:</strong> Always verify payload matches your expected structure.</p>
+        </div>
+        <div class="error-bubble status-400">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <h5>400 Bad Request</h5>
+            <p>Malformed request or missing parameters.</p>
+            <p><strong>Tip:</strong> Check headers, payloads, and query parameters carefully.</p>
+        </div>
+        <div class="error-bubble status-404">
+            <i class="bi bi-x-circle-fill"></i>
+            <h5>404 Not Found</h5>
+            <p>The requested resource does not exist.</p>
+            <p><strong>Tip:</strong> Confirm URL, endpoint, and resource ID.</p>
+        </div>
+        <div class="error-bubble status-500">
+            <i class="bi bi-exclamation-octagon-fill"></i>
+            <h5>500 Internal Server Error</h5>
+            <p>Server encountered an unexpected error.</p>
+            <p><strong>Tip:</strong> Check server logs and handle exceptions gracefully.</p>
+        </div>
+        <div class="error-bubble status-timeout">
+            <i class="bi bi-clock-history"></i>
+            <h5>Timeout</h5>
+            <p>Request took too long to complete.</p>
+            <p><strong>Tip:</strong> Increase timeout or optimize server response.</p>
+        </div>
+        <div class="error-bubble status-dns">
+            <i class="bi bi-diagram-3-fill"></i>
+            <h5>DNS / Connection Error</h5>
+            <p>Client could not reach the server.</p>
+            <p><strong>Tip:</strong> Check network, DNS, or server availability.</p>
+        </div>
+    </div>
+
+    <div class="pro-tips">
+        <h3>💡 Pro Tips for Debugging APIs</h3>
+        <ul>
+            <li>Use Postman or Insomnia for testing APIs visually.</li>
+            <li>Enable detailed logging for both requests and responses.</li>
+            <li>Document all status codes returned by your API.</li>
+            <li>Implement retries with exponential backoff for transient failures.</li>
+            <li>Keep an error map for quick reference during debugging.</li>
+        </ul>
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">

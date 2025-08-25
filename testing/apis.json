@@ -1,0 +1,18 @@
+{
+  "JSONPlaceholder": "https://jsonplaceholder.typicode.com/posts",
+  "CatFacts": "https://catfact.ninja/fact",
+  "DogAPI": "https://dog.ceo/api/breeds/image/random",
+  "BoredAPI": "https://www.boredapi.com/api/activity",
+
+  "Agify": "https://api.agify.io?name=michael",
+  "Genderize": "https://api.genderize.io?name=luc",
+  "Nationalize": "https://api.nationalize.io?name=nathan",
+  "AdviceSlip": "https://api.adviceslip.com/advice",
+
+  "BadRequestTest": "https://httpbin.org/status/422",
+  "NotFoundTest": "https://httpbin.org/status/404",
+  "InternalServerError": "https://httpbin.org/status/500",
+  "ServiceUnavailable": "https://httpbin.org/status/503",
+  "InvalidDomain": "https://invalid.openai.test",
+  "TimeoutTest": "https://10.255.255.1"
+}

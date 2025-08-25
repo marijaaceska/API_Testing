@@ -1,0 +1,119 @@
+﻿.guide-container {
+    position: relative;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.guide-title {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.error-bubble {
+    display: inline-block;
+    width: 280px;
+    min-height: 200px;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+    .error-bubble:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .error-bubble i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .error-bubble h5 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+
+    .error-bubble p {
+        font-size: 0.95rem;
+        line-height: 1.3rem;
+    }
+
+/* Color glows */
+.status-200 {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.status-400 {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
+.status-404 {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+}
+
+.status-500 {
+    background: linear-gradient(135deg, #6c757d, #495057);
+}
+
+.status-timeout {
+    background: linear-gradient(135deg, #17a2b8, #117a8b);
+}
+
+.status-dns {
+    background: linear-gradient(135deg, #6610f2, #3d0d9c);
+}
+
+.pro-tips {
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    text-align: left;
+}
+
+    .pro-tips h3 {
+        margin-bottom: 20px;
+    }
+
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.shape1 {
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    left: 20px;
+    background: #00c6ff;
+}
+
+.shape2 {
+    width: 100px;
+    height: 100px;
+    bottom: 80px;
+    right: 50px;
+    background: #ff6b6b;
+}
+
+.shape3 {
+    width: 200px;
+    height: 200px;
+    top: 200px;
+    right: 150px;
+    background: #6610f2;
+}
