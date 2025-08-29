@@ -33,23 +33,35 @@ namespace APITestApp.Services
         }
 
         
-        public async Task<IEnumerable<object>> GetLogsAsync()
+        public async Task<List<Dictionary<string, object>>> GetLogsAsync()
         {
             var response = await _client.SearchAsync<object>(s => s
                 .Index("api_logs")
-                .Size(50)  
+                .Size(50)
                 .Source(sf => sf.Includes(f => f
-                    .Fields("api_name", "status", "response_time", "error", "timestamp") 
+                    .Fields("api_name", "status", "response_time", "error", "timestamp")
                 ))
             );
 
             if (!response.IsValid)
                 throw new Exception($"Elasticsearch error: {response.OriginalException?.Message}");
 
-            return response.Documents;
+            var logsWithId = new List<Dictionary<string, object>>();
+
+            foreach (var hit in response.Hits)
+            {
+                var dict = hit.Source as IDictionary<string, object>;
+                var dictCopy = dict != null
+                    ? dict.ToDictionary(k => k.Key, v => v.Value)
+                    : new Dictionary<string, object>();
+
+                dictCopy["_id"] = hit.Id;
+                logsWithId.Add(dictCopy);
+            }
+
+            return logsWithId;
         }
-        
-        
+
 
         public async Task<byte[]> GeneratePdfAsync(IEnumerable<object> logs)
         {
@@ -129,21 +141,5 @@ namespace APITestApp.Services
             return await Task.FromResult(pdfBytes);
         }
 
-        public async Task<IEnumerable<object>> GetLogsAsync(int size = 30)
-        {
-            var response = await _client.SearchAsync<object>(s => s
-                .Index("api_logs")
-                .Size(size)
-                .Sort(ss => ss.Descending("_source.timestamp")) 
-                .Source(sf => sf.Includes(f => f
-                    .Fields("api_name", "status", "response_time", "error", "timestamp")
-                ))
-            );
-
-            if (!response.IsValid)
-                throw new Exception($"Elasticsearch error: {response.OriginalException?.Message}");
-
-            return response.Documents;
-        }
     }
 }

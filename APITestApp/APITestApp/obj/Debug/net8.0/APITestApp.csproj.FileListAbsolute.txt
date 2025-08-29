@@ -229,3 +229,4 @@ C:\Users\Administrator\Desktop\dr_proekt\ApiTestingMonitoring\APITestApp\APITest
 C:\Users\Administrator\Desktop\dr_proekt\ApiTestingMonitoring\APITestApp\APITestApp\obj\Debug\net8.0\APITestApp.pdb
 C:\Users\Administrator\Desktop\dr_proekt\ApiTestingMonitoring\APITestApp\APITestApp\obj\Debug\net8.0\APITestApp.genruntimeconfig.cache
 C:\Users\Administrator\Desktop\dr_proekt\ApiTestingMonitoring\APITestApp\APITestApp\obj\Debug\net8.0\ref\APITestApp.dll
+C:\Users\Administrator\Desktop\dr_proekt\ApiTestingMonitoring\APITestApp\APITestApp\obj\Debug\net8.0\APITestApp.sourcelink.json

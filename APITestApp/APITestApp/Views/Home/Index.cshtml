@@ -46,11 +46,6 @@
     <div class="mt-5">
         <a href="/Log" class="btn btn-primary btn-lg btn-custom me-3">📊 View Logs</a>
         <a href="/Log/DownloadPdf" class="btn btn-success btn-lg btn-custom me-3">📄 Download Report</a>
-        <form method="post" asp-controller="Email" asp-action="SendReport" style="display:inline;">
-            <button type="submit" class="btn btn-warning btn-lg btn-custom">
-                📧 Send Report via Email
-            </button>
-        </form>
     </div>
 
     @if (TempData["SuccessMessage"] != null)

@@ -46,5 +46,39 @@ namespace APITestApp.Controllers
 
             return RedirectToAction("Index", "Log");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> SendLogsReport([FromForm] List<string> selectedLogs)
+        {
+            if (selectedLogs == null || !selectedLogs.Any())
+            {
+                TempData["ErrorMessage"] = "Please select at least one API log to send.";
+                return RedirectToAction("Index", "Log");
+            }
+
+            var allLogs = await _logService.GetLogsAsync();
+            var logsToSend = allLogs
+                .Cast<Dictionary<string, object>>()
+                .Where(l => l.ContainsKey("_id") && selectedLogs.Contains(l["_id"].ToString()))
+                .ToList();
+
+            if (!logsToSend.Any())
+            {
+                TempData["ErrorMessage"] = "No logs found for the selected IDs.";
+                return RedirectToAction("Index", "Log");
+            }
+
+            try
+            {
+                await _emailService.SendSelectedLogsAsync(logsToSend);
+                TempData["SuccessMessage"] = "Selected logs have been sent via email successfully!";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Error sending email: " + ex.Message;
+            }
+
+            return RedirectToAction("Index", "Log");
+        }
     }
 }

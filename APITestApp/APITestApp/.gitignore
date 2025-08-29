@@ -1,2 +1,17 @@
 .env
 
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+
+# Other IDE files
+.idea/
+*.sourcelink.json
+
