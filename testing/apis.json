@@ -1,18 +1,121 @@
 {
-  "JSONPlaceholder": "https://jsonplaceholder.typicode.com/posts",
-  "CatFacts": "https://catfact.ninja/fact",
-  "DogAPI": "https://dog.ceo/api/breeds/image/random",
-  "BoredAPI": "https://www.boredapi.com/api/activity",
-
-  "Agify": "https://api.agify.io?name=michael",
-  "Genderize": "https://api.genderize.io?name=luc",
-  "Nationalize": "https://api.nationalize.io?name=nathan",
-  "AdviceSlip": "https://api.adviceslip.com/advice",
-
-  "BadRequestTest": "https://httpbin.org/status/422",
-  "NotFoundTest": "https://httpbin.org/status/404",
-  "InternalServerError": "https://httpbin.org/status/500",
-  "ServiceUnavailable": "https://httpbin.org/status/503",
-  "InvalidDomain": "https://invalid.openai.test",
-  "TimeoutTest": "https://10.255.255.1"
+  "GetPosts": {
+    "method": "GET",
+    "url": "https://jsonplaceholder.typicode.com/posts"
+  },
+  "GetPost1": {
+    "method": "GET",
+    "url": "https://jsonplaceholder.typicode.com/posts/1"
+  },
+  "GetCatFact": {
+    "method": "GET",
+    "url": "https://catfact.ninja/fact"
+  },
+  "GetDogImage": {
+    "method": "GET",
+    "url": "https://dog.ceo/api/breeds/image/random"
+  },
+  "GetRandomActivity": {
+    "method": "GET",
+    "url": "https://www.boredapi.com/api/activity"
+  },
+  "GetAgify": {
+    "method": "GET",
+    "url": "https://api.agify.io?name=michael"
+  },
+  "GetGenderize": {
+    "method": "GET",
+    "url": "https://api.genderize.io?name=luc"
+  },
+  "GetNationalize": {
+    "method": "GET",
+    "url": "https://api.nationalize.io?name=nathan"
+  },
+  "GetAdviceSlip": {
+    "method": "GET",
+    "url": "https://api.adviceslip.com/advice"
+  },
+  "BadRequestGET": {
+    "method": "GET",
+    "url": "https://httpbin.org/status/400"
+  },
+  "NotFoundGET": {
+    "method": "GET",
+    "url": "https://httpbin.org/status/404"
+  },
+  "ServerErrorGET": {
+    "method": "GET",
+    "url": "https://httpbin.org/status/500"
+  },
+  "ServiceUnavailableGET": {
+    "method": "GET",
+    "url": "https://httpbin.org/status/503"
+  },
+  "InvalidDomainGET": {
+    "method": "GET",
+    "url": "https://invalid.openai.test"
+  },
+  "TimeoutGET": {
+    "method": "GET",
+    "url": "https://10.255.255.1"
+  },
+  "CreatePostSuccess": {
+    "method": "POST",
+    "url": "https://jsonplaceholder.typicode.com/posts",
+    "data": {
+      "title": "foo",
+      "body": "bar",
+      "userId": 1
+    }
+  },
+  "CreatePostBadRequest": {
+    "method": "POST",
+    "url": "https://httpbin.org/status/400",
+    "data": {
+      "invalid": "data"
+    }
+  },
+  "CreatePostServerError": {
+    "method": "POST",
+    "url": "https://httpbin.org/status/500",
+    "data": {
+      "title": "fail"
+    }
+  },
+  "DeletePostSuccess": {
+    "method": "DELETE",
+    "url": "https://jsonplaceholder.typicode.com/posts/1"
+  },
+  "DeletePostNotFound": {
+    "method": "DELETE",
+    "url": "https://httpbin.org/status/404"
+  },
+  "DeletePostServerError": {
+    "method": "DELETE",
+    "url": "https://httpbin.org/status/500"
+  },
+  "DeletePostTimeout": {
+    "method": "DELETE",
+    "url": "https://10.255.255.1"
+  },
+  "CreateUserSuccess": {
+    "method": "POST",
+    "url": "https://jsonplaceholder.typicode.com/users",
+    "data": {
+      "name": "John Doe",
+      "username": "johnd",
+      "email": "john@example.com"
+    }
+  },
+  "CreateUserBadRequest": {
+    "method": "POST",
+    "url": "https://httpbin.org/status/400",
+    "data": {
+      "invalid": "user"
+    }
+  },
+  "DeleteUserNotFound": {
+    "method": "DELETE",
+    "url": "https://httpbin.org/status/404"
+  }
 }

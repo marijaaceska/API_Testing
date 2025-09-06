@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -27,16 +35,8 @@
       "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\views\\log\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\wwwroot\\css\\logstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\wwwroot\\css\\logstyle.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|solutionrelative:apitestapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{211D052B-A2C2-4DEB-B3F1-5F7F7E4102DD}|APITestApp\\APITestApp.csproj|c:\\users\\administrator\\desktop\\dr_proekt\\apitestingmonitoring\\apitestapp\\apitestapp\\controllers\\logcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\.gitignore",
               "RelativeDocumentMoniker": "APITestApp\\.gitignore",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\.gitignore",
               "RelativeToolTip": "APITestApp\\.gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-08-29T12:10:28.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\.env",
               "RelativeDocumentMoniker": "APITestApp\\.env",
@@ -79,7 +79,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "logStyle.css",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\wwwroot\\css\\logStyle.css",
               "RelativeDocumentMoniker": "APITestApp\\wwwroot\\css\\logStyle.css",
@@ -91,7 +91,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\appsettings.json",
               "RelativeDocumentMoniker": "APITestApp\\appsettings.json",
@@ -99,11 +99,12 @@
               "RelativeToolTip": "APITestApp\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-29T10:42:22.395Z"
+              "WhenOpened": "2025-08-29T10:42:22.395Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "LogService.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Services\\LogService.cs",
               "RelativeDocumentMoniker": "APITestApp\\Services\\LogService.cs",
@@ -127,7 +128,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "APITestApp\\Views\\Home\\Index.cshtml",
@@ -139,19 +140,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Views\\Log\\Index.cshtml",
               "RelativeDocumentMoniker": "APITestApp\\Views\\Log\\Index.cshtml",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Views\\Log\\Index.cshtml",
               "RelativeToolTip": "APITestApp\\Views\\Log\\Index.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB4AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAcwGYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-27T15:55:20.02Z"
+              "WhenOpened": "2025-08-27T15:55:20.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "EmailController.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Controllers\\EmailController.cs",
               "RelativeDocumentMoniker": "APITestApp\\Controllers\\EmailController.cs",
@@ -163,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\dr_proekt\\ApiTestingMonitoring\\APITestApp\\APITestApp\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "APITestApp\\Services\\EmailService.cs",

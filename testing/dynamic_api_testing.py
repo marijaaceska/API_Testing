@@ -50,12 +50,22 @@ def load_apis(file_path="apis.json"):
         return json.load(f)
 
 
-def make_request(url, timeout=10):
+def make_request(url, method="GET", data=None, timeout=10):
     try:
         start_time = time.time()
-        response = requests.get(url, timeout=timeout)
+
+        if method == "GET":
+            response = requests.get(url, timeout=timeout)
+        elif method == "POST":
+            response = requests.post(url, json=data, timeout=timeout)
+        elif method == "DELETE":
+            response = requests.delete(url, timeout=timeout)
+        else:
+            return None, None, f"Unsupported method: {method}"
+
         duration = round(time.time() - start_time, 2)
         return response.status_code, duration, None
+
     except requests.exceptions.Timeout:
         return None, None, f"Timeout after {timeout}s"
     except requests.exceptions.ConnectionError as e:
@@ -89,10 +99,11 @@ def send_to_elasticsearch(index, doc):
         print(f"Failed to send to Elasticsearch: {e}")
 
 
-def log_api(name, status, duration, error):
+def log_api(name, status, duration, error, method="GET"):
     msg = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "api_name": f"{name}",
+        "api_name": name,
+        "method": method,
         "status": status,
         "response_time": duration,
         "error": error
@@ -107,7 +118,6 @@ def start_consumer():
     def callback(ch, method, properties, body):
         message = json.loads(body)
         print(f"Consumed: {message}")
-
         time.sleep(1)  # delay 1 second
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
@@ -122,17 +132,28 @@ def start_consumer():
 consumer_thread = threading.Thread(target=start_consumer, daemon=True)
 consumer_thread.start()
 
-
 run_count = 0
-MAX_RUNS = 2
+MAX_RUNS = 1
 
 while run_count < MAX_RUNS:
     run_count += 1
     print(f"\n=== Running API test cycle #{run_count} at {datetime.now()} ===")
     api_list = load_apis()
-    for name, url in api_list.items():
-        status, duration, error = make_request(url)
-        log_api(name, status, duration, error)
+
+    for name, config in api_list.items():
+        method = config.get("method", "GET")
+        url = config["url"]
+        data = config.get("data")
+
+        status, duration, error = make_request(url, method, data)
+
+        log_api(
+            name=name,
+            status=status,
+            duration=duration,
+            error=error,
+            method=method
+        )
 
     summary = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -144,7 +165,7 @@ while run_count < MAX_RUNS:
     print(f"--- Completed run #{run_count} ---\n")
     time.sleep(5)
 
-print("Max runs reached. Connections remain open. Press Ctrl+C to exit.")
+print("Max runs reached. Connections remain open.")
 
 try:
     while True:
